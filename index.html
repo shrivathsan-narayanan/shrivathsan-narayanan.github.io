@@ -3,46 +3,112 @@
 
 <head>
 
-<title>Shrivathsan Narayanan</title>
+<title>Shrivathsan Narayanan | Portfolio</title>
 
 <style>
 
+/* General Layout */
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: white;
+    color: black;
+}
+
+/* Header */
+
+.header {
+    padding: 30px;
+    border-bottom: 1px solid black;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Navigation Tabs */
+
+.navbar {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.navbar button:hover {
+    background-color: #f0f0f0;
+}
+
+.navbar button.active {
+    border-bottom: 2px solid black;
+}
+
+/* Content Area */
+
+.content {
+    padding: 40px;
     max-width: 900px;
 }
 
-h1 {
-    color: #003366;
-}
+/* Sections */
 
-h2 {
-    color: #005599;
-    margin-top: 40px;
+.tabcontent {
+    display: none;
 }
 
 img {
     width: 100%;
     max-width: 700px;
-    margin-top: 10px;
+    margin-top: 15px;
+    border: 1px solid black;
 }
 
-.section {
-    margin-bottom: 40px;
-}
-
-hr {
-    margin-top: 30px;
-    margin-bottom: 30px;
+ul {
+    line-height: 1.8;
 }
 
 </style>
 
+<script>
+
+function openTab(evt, tabName) {
+
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className =
+        tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+window.onload = function() {
+    document.getElementById("defaultOpen").click();
+};
+
+</script>
+
 </head>
 
 <body>
+
+<div class="header">
 
 <h1>Shrivathsan Narayanan</h1>
 
@@ -51,102 +117,140 @@ Doctoral Candidate
 <br>
 Department of Aerospace Engineering  
 <br>
-Indian Institute of Technology Madras  
+Indian Institute of Technology Madras
 </p>
 
 <p>
-Email: nshrivathsan99@gmail.com  
-<br>
-ORCID: https://orcid.org/0009-0004-7165-1799  
+ORCID | Email
 </p>
 
-<hr>
+</div>
 
-<div class="section">
+<div class="navbar">
+
+<button class="tablink" id="defaultOpen"
+onclick="openTab(event, 'Home')">
+Home
+</button>
+
+<button class="tablink"
+onclick="openTab(event, 'Experimental')">
+Experimental
+</button>
+
+<button class="tablink"
+onclick="openTab(event, 'Numerical')">
+Numerical
+</button>
+
+<button class="tablink"
+onclick="openTab(event, 'Publications')">
+Publications
+</button>
+
+<button class="tablink"
+onclick="openTab(event, 'Contact')">
+Contact
+</button>
+
+</div>
+
+<div class="content">
+
+<!-- HOME -->
+
+<div id="Home" class="tabcontent">
 
 <h2>Research Overview</h2>
 
 <p>
-My doctoral research focuses on numerical and experimental investigations of 
-unsteady rotorcraft aerodynamics and gust interactions. This work involves 
-the development of mid-fidelity free-vortex wake methods for modelling 
-transient rotor flows, alongside the design and implementation of controlled 
-gust-generation facilities for experimental validation studies.
+My doctoral research focuses on numerical and experimental 
+investigations of unsteady rotorcraft aerodynamics and 
+gust interactions. The work integrates mid-fidelity 
+free-vortex wake modelling, GPU-accelerated computation, 
+and controlled experimental validation studies.
 </p>
 
 <p>
-The research integrates computational modelling, large-scale parametric 
-simulation workflows, and experimental measurements to understand rotor 
-response under complex unsteady flow environments.
+This research aims to understand transient rotor response 
+under complex unsteady flow environments and develop 
+validated modelling strategies for aerodynamic systems.
 </p>
 
 </div>
 
-<div class="section">
+<!-- EXPERIMENTAL -->
+
+<div id="Experimental" class="tabcontent">
 
 <h2>Experimental Systems</h2>
 
 <p>
-Development of a compact fan-array-based gust generation facility 
-for controlled aerodynamic testing of rotor systems. The facility 
-enables repeatable unsteady flow environments for rotor load and 
-performance characterization studies.
+Development of a compact fan-array-based gust generation 
+facility for controlled aerodynamic testing of rotor systems.
 </p>
 
-<img src="fan_array.jpg">
+<img src="gust_array.png">
 
 <p>
-Experimental rotor test rig used for isolated rotor performance 
-evaluation under controlled gust conditions, including load 
-measurement and statistical flow analysis.
+Rotor test rig for isolated rotor performance studies 
+under controlled gust conditions using load measurement 
+and statistical flow analysis.
 </p>
 
-<img src="rotor_rig.jpg">
+<img src="test_rig.png">
 
 </div>
 
-<div class="section">
+<!-- NUMERICAL -->
+
+<div id="Numerical" class="tabcontent">
 
 <h2>Numerical Modelling</h2>
 
 <p>
-Development of a mid-fidelity free-vortex wake modelling framework 
-for simulating unsteady aerodynamic interactions in multi-rotor 
-systems. The solver includes GPU-accelerated computational routines 
-and neural-network-assisted modelling approaches for efficient 
-large-scale parametric simulations.
+Development of a mid-fidelity free-vortex wake modelling 
+framework for simulating unsteady aerodynamic interactions 
+in multi-rotor systems.
+</p>
+
+<p>
+The solver incorporates GPU-accelerated routines and 
+hybrid modelling approaches for efficient large-scale 
+parametric simulation studies.
 </p>
 
 <img src="wake_plot.jpg">
 
 </div>
 
-<div class="section">
+<!-- PUBLICATIONS -->
+
+<div id="Publications" class="tabcontent">
 
 <h2>Selected Publications</h2>
 
 <ul>
 
 <li>
-Physics of Fluids (2024) — Editor’s Pick  
-Unsteady aerodynamic response of rotor systems under gust conditions.
+Physics of Fluids (2024) — Editor’s Pick
 </li>
 
 <li>
-Vertical Flight Society Forum 80 — Montreal, Canada  
-Numerical investigation of rotor response under discrete gust environments.
+Vertical Flight Society Forum 80 — Montreal
 </li>
 
 <li>
-Asian–Australian Rotorcraft Forum 11 — Chennai, India  
-Experimental analysis of rotor performance under continuous gust conditions.
+Asian–Australian Rotorcraft Forum 11 — Chennai
 </li>
 
 </ul>
 
 </div>
 
-<div class="section">
+<!-- CONTACT -->
+
+<div id="Contact" class="tabcontent">
 
 <h2>Profiles</h2>
 
@@ -157,6 +261,14 @@ ORCID:
 https://orcid.org/0009-0004-7165-1799  
 
 </p>
+
+<p>
+Email:  
+<br>
+nshrivathsan99@gmail.com
+</p>
+
+</div>
 
 </div>
 

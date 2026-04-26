@@ -19,13 +19,19 @@ body {
 /* Header */
 
 .header {
-    padding: 30px;
-    border-bottom: 1px solid black;
+    padding: 30px 40px;
+
+    background: linear-gradient(
+        to right,
+        #f5f5f5,
+        #ffffff
+    );
+
 }
 
 .header h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 32px;
 }
 
 /* Navigation Tabs */
@@ -119,6 +125,10 @@ window.onload = function() {
 
 <div class="header">
 
+<div style="display:flex; align-items:center; justify-content:space-between;">
+
+<div>
+
 <h1>Shrivathsan Narayanan</h1>
 
 <p>
@@ -140,7 +150,9 @@ ORCID
 <a href="https://www.researchgate.net/profile/Shrivathsan-Narayanan-2" target="_blank">
 ResearchGate
 </a>
-    
+
+&nbsp;|&nbsp;
+
 <a href="https://www.linkedin.com/in/shrivathsannarayanan/" target="_blank">
 LinkedIn
 </a>
@@ -155,6 +167,17 @@ Email
 
 </div>
 
+<div>
+
+<img src="profile.jpg"
+style="width:140px; height:auto;">
+
+</div>
+
+</div>
+
+</div>
+    
 <div class="navbar">
 
 <button class="tablink" id="defaultOpen"
@@ -192,27 +215,15 @@ Publications
 <h2>About</h2>
 
 <p>
-I am a doctoral candidate in Aerospace Engineering at the 
-Indian Institute of Technology Madras. My research focuses on 
-numerical and experimental investigations of unsteady rotorcraft 
-aerodynamics and gust interactions, involving the development 
-of mid-fidelity free-vortex wake models and controlled 
-experimental validation systems.
-</p>
-
-<p>
-My work integrates computational modelling, large-scale 
-parametric simulations, and experimental testing to understand 
-transient aerodynamic behaviour in rotor systems operating under 
-complex flow environments.
-</p>
-
-</div>
-
-<div>
-
-<img src="photo.jpg" 
-style="width:180px; border:1px solid black;">
+I am a doctoral candidate in Aerospace Engineering at 
+Indian Institute of Technology Madras. My thesis focuses on the 
+numerical and experimental investigations of gust effects on 
+multi-rotor systems. My areas of research include rotorcraft design 
+and aerodynamics, unsteady flow behaviour, gust interactions, 
+high-performance computing, and neural networks for aerospace applications. 
+I am particularly interested in extending these methodologies and approaches 
+to a broader range of inter-disciplinary probems in aerospace, including 
+aero-structural and fluid-thermal systems.
 
 </div>
 
@@ -221,13 +232,22 @@ style="width:180px; border:1px solid black;">
 <hr>
 
 <h2>Research Overview</h2>
-
+     
 <p>
 My doctoral research investigates the aerodynamic response of 
-rotor systems subjected to controlled unsteady flow environments. 
-The work combines numerical modelling and experimental testing 
-to study rotor performance, load behaviour, and flow-field 
-interactions under gust conditions.
+rotor systems subjected to controlled unsteady gust environments. 
+The work primarily involves the development and validation of a 
+mid-fidelity free-vortex wake method (FVM) model, alongisde the design and 
+implenentation of a compact fan-array wind generator for complementary 
+numerical and experimental investigations.
+</p>
+    
+<p>
+Numerically, the research studies the rotor loads and moments, sectional aerodynamic 
+properties including angle of attack and induced inflow, and rotor-wake 
+interactions under gust conditions. Experimentally, the generated gust field is 
+characterized, followed by statistical analysis of rotor loads and moments 
+under real-time gust conditions.
 </p>
 
 <p>
@@ -237,23 +257,22 @@ Key components of this research include:
 <ul>
 
 <li>
-Development of free-vortex wake modelling frameworks for 
-unsteady aerodynamic simulations
+Development and validation of a FVM framework for multi-rotor simulations
 </li>
 
 <li>
-GPU-accelerated computational workflows for large-scale 
+Design, implementation, and characterization of a compact 
+fan-array gust generator
+</li>
+
+<li>
+Complementary numerical and experimental investigations of rotor 
+performance characteristics under discrete and continuous gust conditions
+</li>
+
+<li>
+CPU and GPU-accelerated computational workflows for large-scale 
 parametric investigations
-</li>
-
-<li>
-Design and implementation of controlled gust-generation 
-experimental facilities
-</li>
-
-<li>
-Validation of numerical predictions through systematic 
-experimental measurements
 </li>
 
 </ul>
@@ -308,8 +327,6 @@ parametric simulation studies.
 <!-- PUBLICATIONS -->
 
 <div id="Publications" class="tabcontent">
-
-<h2>Publications</h2>
 
 <h3>Journal Articles</h3>
 

@@ -7,8 +7,6 @@
 
 <style>
 
-/* General Layout */
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -16,16 +14,15 @@ body {
     color: black;
 }
 
-/* Header */
-
 .header {
-    padding: 40px 60px;
+    padding: 30px 40px;
 
     background: linear-gradient(
-        135deg,
-        #9c9c9c,
-        #ededed
+      135deg,
+      #9c9c9c,
+      #ededed
     );
+
 }
 
 .header h1 {
@@ -40,8 +37,6 @@ p {
 li {
     text-align: justify;
 }
-
-/* Navigation Tabs */
 
 .navbar {
     display: flex;
@@ -64,15 +59,11 @@ li {
     border-bottom: 2px solid black;
 }
 
-/* Content Area */
-
 .content {
     padding: 40px;
     max-width: 1100px;
     margin: auto;
 }
-
-/* Sections */
 
 .tabcontent {
     display: none;
@@ -96,10 +87,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-hr {
-    margin: 40px 0;
 }
 
 </style>
@@ -134,8 +121,6 @@ window.onload = function() {
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <div class="header">
 
@@ -183,15 +168,14 @@ Email
 
 <div>
 
-<img src="profile.jpg" style="width:140px;">
+<img src="photo.jpg"
+style="width:140px; height:auto;">
 
 </div>
 
 </div>
 
 </div>
-
-<!-- NAVBAR -->
 
 <div class="navbar">
 
@@ -223,56 +207,72 @@ Publications
 
 <div id="Home" class="tabcontent">
 
+<div style="display:flex; align-items:flex-start; gap:40px;">
+
+<div style="flex:1;">
+
 <h2>About</h2>
 
 <p>
 I am a doctoral candidate in Aerospace Engineering at 
-Indian Institute of Technology Madras. My thesis focuses on 
+Indian Institute of Technology Madras. My thesis focuses on the 
 numerical and experimental investigations of gust effects on 
-multi-rotor systems. My research areas include rotorcraft design 
+multi-rotor systems. My areas of research include rotorcraft design 
 and aerodynamics, unsteady flow behaviour, gust interactions, 
-high-performance computing, and neural-network-based modelling 
-for aerospace applications. I am particularly interested in 
-extending these methodologies to broader interdisciplinary 
-problems in aerospace, including aero-structural and 
-fluid–thermal systems.
+high-performance computing, and neural networks for aerospace applications. 
+I am particularly interested in extending these methodologies and approaches 
+to a broader range of interdisciplinary problems in aerospace, including 
+aero-structural and fluid-thermal systems.
 </p>
+
+</div>
+
+</div>
 
 <hr>
 
 <h2>Research Overview</h2>
-
+     
 <p>
 My doctoral research investigates the aerodynamic response of 
 rotor systems subjected to controlled unsteady gust environments. 
-The work involves development and validation of a mid-fidelity 
-free-vortex wake method (FVM) model alongside design and 
-implementation of a compact fan-array gust generator.
+The work primarily involves the development and validation of a 
+mid-fidelity free-vortex wake method (FVM) model, alongside the design and 
+implementation of a compact fan-array wind generator for complementary 
+numerical and experimental investigations.
+</p>
+    
+<p>
+Numerically, the research studies the rotor loads and moments, sectional aerodynamic 
+properties including angle of attack and induced inflow, and rotor-wake 
+interactions under gust conditions. Experimentally, the generated gust field is 
+characterised, followed by statistical analysis of rotor loads and moments 
+under real-time gust conditions.
 </p>
 
 <p>
-Numerically, the research evaluates rotor loads, sectional 
-aerodynamic behaviour, and wake interactions. Experimentally, 
-the generated gust field is characterized through statistical 
-analysis and validation measurements.
+Key components of this research include:
 </p>
 
 <ul>
 
 <li>
-Development and validation of a free-vortex modelling framework
+Development and validation of a FVM framework for multi-rotor simulations
 </li>
 
 <li>
-Design and characterization of a compact fan-array gust generator
+Design, implementation, and characterisation of a compact 
+fan-array gust generator
 </li>
 
 <li>
-Combined numerical and experimental rotor performance analysis
+Complementary numerical and experimental investigations of rotor 
+performance characteristics under discrete and continuous gust conditions
 </li>
 
 <li>
-CPU- and GPU-accelerated large-scale parametric simulations
+CPU and GPU-accelerated computational workflows for large-scale 
+parametric investigations
 </li>
 
 </ul>
@@ -286,30 +286,31 @@ CPU- and GPU-accelerated large-scale parametric simulations
 <h3>Fan-array Wind Generator and Rotor Test Rig</h3>
 
 <p>
-A compact fan-array-based open-channel wind generation facility 
-was developed to produce controlled gust environments. 
-An isolated rotor test rig was designed to measure aerodynamic 
-loads and validate rotor–gust interactions.
+A compact fan-array-based open-channel wind generation facility was developed 
+to produce controlled gust environments for aerodynamic testing. 
+A rotor test rig was also designed and fabricated to measure 
+aerodynamic loads and moments for validation and
+rotor-gust interaction studies.
 </p>
 
 <div style="display:flex; gap:40px; flex-wrap:wrap;">
 
 <div style="flex:1; min-width:320px;">
 
-<img src="fan_array.png">
+<img src="gust_array.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Fan-array wind generator schematic.
+Figure: Schematic of the fan-array wind generator and the associated components.
 </p>
 
 </div>
 
 <div style="flex:1; min-width:320px;">
 
-<img src="rotor_rig.png">
+<img src="test_rig.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Rotor test rig schematic.
+Figure: Schematic of the rotor test rig and the associated components.
 </p>
 
 </div>
@@ -318,22 +319,25 @@ Figure: Rotor test rig schematic.
 
 <hr>
 
-<h3>Flow Field Characterization</h3>
+<h3>Flow field Characterisation </h3>
 
-<img src="measurement_grid.png">
+<img src="measurement_locations.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Measurement grid across downstream planes.
+Figure: Measurement locations across downstream planes 
+used for gust-array flow field characterisation.
 </p>
 
 <hr>
 
-<h3>Turbulence Intensity Evolution</h3>
+<h3>Representative evolution of turbulence intensity </h3>
 
-<img src="TI_contour.png">
+<img src="ti_contour.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Turbulence intensity contours across downstream planes.
+Figure: Turbulence intensity contours across multiple 
+downstream planes showing spatial development of the 
+generated gust flow field.
 </p>
 
 <hr>
@@ -344,20 +348,20 @@ Figure: Turbulence intensity contours across downstream planes.
 
 <div style="flex:1; min-width:320px;">
 
-<img src="load_time.png">
+<img src="thrust_time_exp.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Rotor thrust time-history.
+Figure: Representative rotor load time-history.
 </p>
 
 </div>
 
 <div style="flex:1; min-width:320px;">
 
-<img src="fft_plot.png">
+<img src="thrust_fft_exp.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Frequency spectrum (FFT).
+Figure: Corresponding frequency spectrum.
 </p>
 
 </div>
@@ -372,107 +376,30 @@ Figure: Frequency spectrum (FFT).
 
 <h3>Free-Vortex Wake Model</h3>
 
-<p>
-A mid-fidelity free-vortex wake modelling framework 
-was developed to simulate unsteady rotor aerodynamics.
-</p>
-
-<img src="filament_model.png">
+<img src="fvm_env.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Filament discretization representation.
+Figure: Blade environment and vortex filament discretisation.
 </p>
 
 <hr>
 
-<h3>Coaxial Rotor Aerodynamic Response</h3>
+<h3>Sectional Aerodynamic Response in Coaxial Configuration</h3>
 
 <img src="coax_aoa.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Angle-of-attack variation in coaxial rotor system.
+Figure: Sectional angle of attack variation in coaxial rotor system.
 </p>
 
 <hr>
 
-<h3>Quad-Rotor Wake and Thrust Response</h3>
+<h3>Quad-Rotor Gust Response</h3>
 
 <img src="quad_wake_thrust.png">
 
 <p style="font-size:14px; color:#444;">
-Figure: Quad-rotor wake and thrust response.
+Figure: Quad-rotor wake structure and thrust response.
 </p>
 
 </div>
-
-<!-- PUBLICATIONS -->
-
-<div id="Publications" class="tabcontent">
-
-<h3>Journal Articles</h3>
-
-<ul>
-
-<li>
-Pastay, A., Narayanan, S., and Govindarajan, B.,  
-"Aerodynamic Evaluation of Wind Speed Sensor Placement on UAVs,"  
-<i>EGUsphere</i>, 2026.  
-<br>
-<a href="https://doi.org/10.5194/egusphere-2026-977" target="_blank">
-DOI: 10.5194/egusphere-2026-977
-</a>
-</li>
-
-<br>
-
-<li>
-Narayanan, S., and Govindarajan, B.,  
-"Effects of Gust on the Aerodynamics of Multi-Rotors,"  
-<i>Physics of Fluids</i>, 2024 — <b>Editor’s Pick</b>.  
-<br>
-<a href="https://doi.org/10.1063/5.0243421" target="_blank">
-DOI: 10.1063/5.0243421
-</a>
-</li>
-
-</ul>
-
-<h3>Conference Papers</h3>
-
-<ul>
-
-<li>
-Narayanan, S., Chandel, A., and Govindarajan, B.,  
-"Effect of Gust on Coaxial Rotors using Free Vortex Methods,"  
-<i>VFS Forum 80</i>, Montreal, Canada, 2024.  
-<br>
-<a href="https://doi.org/10.4050/F-0080-2024-1262" target="_blank">
-DOI: 10.4050/F-0080-2024-1262
-</a>
-</li>
-
-<br>
-
-<li>
-Narayanan, S., Shalu, H., Sridharan, A., and Govindarajan, B.,  
-"Rotor Inflow Prediction Using Free-Vortex Methods,"  
-<i>ARF 11</i>, Chennai, India, 2025.  
-</li>
-
-<br>
-
-<li>
-Roshni, E., Narayanan, S., and Govindarajan, B.,  
-"Experimental Investigations on Axial Gust Effects,"  
-<i>ARF 11</i>, Chennai, India, 2025.  
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</body>
-
-</html>

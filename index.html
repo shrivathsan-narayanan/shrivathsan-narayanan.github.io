@@ -75,6 +75,15 @@ ul {
     line-height: 1.8;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 </style>
 
 <script>
@@ -121,7 +130,27 @@ Indian Institute of Technology Madras
 </p>
 
 <p>
-ORCID | Email
+
+<a href="https://orcid.org/0009-0004-7165-1799" target="_blank">
+ORCID
+</a>
+
+&nbsp;|&nbsp;
+
+<a href="https://www.researchgate.net/profile/Shrivathsan-Narayanan-2" target="_blank">
+ResearchGate
+</a>
+    
+<a href="https://www.linkedin.com/in/shrivathsannarayanan/" target="_blank">
+LinkedIn
+</a>
+
+&nbsp;|&nbsp;
+
+<a href="mailto:nshrivathsan99@gmail.com">
+Email
+</a>
+
 </p>
 
 </div>
@@ -148,11 +177,6 @@ onclick="openTab(event, 'Publications')">
 Publications
 </button>
 
-<button class="tablink"
-onclick="openTab(event, 'Contact')">
-Contact
-</button>
-
 </div>
 
 <div class="content">
@@ -161,21 +185,78 @@ Contact
 
 <div id="Home" class="tabcontent">
 
+<div style="display:flex; align-items:flex-start; gap:40px;">
+
+<div style="flex:1;">
+
+<h2>About</h2>
+
+<p>
+I am a doctoral candidate in Aerospace Engineering at the 
+Indian Institute of Technology Madras. My research focuses on 
+numerical and experimental investigations of unsteady rotorcraft 
+aerodynamics and gust interactions, involving the development 
+of mid-fidelity free-vortex wake models and controlled 
+experimental validation systems.
+</p>
+
+<p>
+My work integrates computational modelling, large-scale 
+parametric simulations, and experimental testing to understand 
+transient aerodynamic behaviour in rotor systems operating under 
+complex flow environments.
+</p>
+
+</div>
+
+<div>
+
+<img src="photo.jpg" 
+style="width:180px; border:1px solid black;">
+
+</div>
+
+</div>
+
+<hr>
+
 <h2>Research Overview</h2>
 
 <p>
-My doctoral research focuses on numerical and experimental 
-investigations of unsteady rotorcraft aerodynamics and 
-gust interactions. The work integrates mid-fidelity 
-free-vortex wake modelling, GPU-accelerated computation, 
-and controlled experimental validation studies.
+My doctoral research investigates the aerodynamic response of 
+rotor systems subjected to controlled unsteady flow environments. 
+The work combines numerical modelling and experimental testing 
+to study rotor performance, load behaviour, and flow-field 
+interactions under gust conditions.
 </p>
 
 <p>
-This research aims to understand transient rotor response 
-under complex unsteady flow environments and develop 
-validated modelling strategies for aerodynamic systems.
+Key components of this research include:
 </p>
+
+<ul>
+
+<li>
+Development of free-vortex wake modelling frameworks for 
+unsteady aerodynamic simulations
+</li>
+
+<li>
+GPU-accelerated computational workflows for large-scale 
+parametric investigations
+</li>
+
+<li>
+Design and implementation of controlled gust-generation 
+experimental facilities
+</li>
+
+<li>
+Validation of numerical predictions through systematic 
+experimental measurements
+</li>
+
+</ul>
 
 </div>
 
@@ -228,45 +309,98 @@ parametric simulation studies.
 
 <div id="Publications" class="tabcontent">
 
-<h2>Selected Publications</h2>
+<h2>Publications</h2>
+
+<h3>Journal Articles</h3>
 
 <ul>
 
 <li>
-Physics of Fluids (2024) — Editor’s Pick
+
+Pastay, A., Narayanan, S., and Govindarajan, B.,  
+"Aerodynamic Evaluation of Wind Speed Sensor Placement on UAVs for Meteorological Applications,"  
+<i>EGUsphere</i>, 2026.  
+
+<br>
+
+<a href="https://doi.org/10.5194/egusphere-2026-977" target="_blank">
+DOI: 10.5194/egusphere-2026-977
+</a>
+
 </li>
 
-<li>
-Vertical Flight Society Forum 80 — Montreal
-</li>
+<br>
 
 <li>
-Asian–Australian Rotorcraft Forum 11 — Chennai
+
+Narayanan, S., and Govindarajan, B.,  
+"Effects of gust on the aerodynamics of multi-rotors,"  
+<i>Physics of Fluids</i>, 2024 — <b>Editor’s Pick</b>.  
+
+<br>
+
+<a href="https://doi.org/10.1063/5.0243421" target="_blank">
+DOI: 10.1063/5.0243421
+</a>
+
 </li>
 
 </ul>
 
-</div>
+<h3>Conference Papers</h3>
 
-<!-- CONTACT -->
+<ul>
 
-<div id="Contact" class="tabcontent">
+<li>
 
-<h2>Profiles</h2>
+Narayanan, S., Shalu, H., Sridharan, A., and Govindarajan, B.,  
+"Rotor Inflow Prediction Using Free-Vortex Methods and Neural Networks,"  
+<i>Proceedings of the 11th Asian–Australian Rotorcraft Forum</i>,  
+Chennai, India, 2025.  
 
-<p>
-
-ORCID:  
 <br>
-https://orcid.org/0009-0004-7165-1799  
 
-</p>
+<a href="https://www.researchgate.net/publication/404203448_Rotor_Inflow_Prediction_using_Free-Vortex_Methods_and_Neural_Networks" target="_blank">
+ResearchGate Link
+</a>
 
-<p>
-Email:  
+</li>
+
 <br>
-nshrivathsan99@gmail.com
-</p>
+
+<li>
+
+Roshni, E., Narayanan, S., and Govindarajan, B.,  
+"Experimental Investigations on the Aerodynamic Effects of Axial Gust on Prop-Rotors,"  
+<i>Proceedings of the 11th Asian–Australian Rotorcraft Forum</i>,  
+Chennai, India, 2025.  
+
+<br>
+
+<a href="https://www.researchgate.net/publication/404203446_Experimental_Investigations_on_the_Aerodynamic_Effects_of_Axial_Gust_on_Prop-Rotors" target="_blank">
+ResearchGate Link
+</a>
+
+</li>
+    
+<br>
+
+<li>
+
+Narayanan, S., Chandel, A., and Govindarajan, B.,  
+"Effect of Gust on Coaxial Rotors using Free Vortex Methods,"  
+<i>Proceedings of the Vertical Flight Society 80th Annual Forum</i>,  
+Montreal, Canada, 2024.  
+
+<br>
+
+<a href="https://doi.org/10.4050/F-0080-2024-1262" target="_blank">
+DOI: 10.4050/F-0080-2024-1262
+</a>
+
+</li>
+
+</ul>
 
 </div>
 

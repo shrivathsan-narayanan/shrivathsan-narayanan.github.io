@@ -1,0 +1,40 @@
+<div class="section-block">
+
+    <h3>GPU Parallelisation of Rotor Induced Inflow Computation</h3>
+
+    <p>
+        The free-vortex wake method (FVM) model developed for numerical
+        rotorcraft aerodynamics has been optimised with parallel-computing
+        techniques using CUDA FORTRAN. The profiling of the solver carried out 
+        using GProf in Python, revealed that a typical single core simulation 
+        of a full-scale single rotor hover solution spent nearly 70% of its time
+        in the Biot-Savart induced inflow computations. The routine is an O(N<sup>2</sup>)
+        operation, and can be directly parallelised due to the independent nature of 
+        the calculation of induced velocity by a given vortex filament on the other 
+        filaments present in the computational domain at a particular time instant.   
+    </p>
+
+    <div class="fig-stack">
+
+            <figure>
+                <img src="figures/gprof.jpg" class="thumb" alt="FVM code profiling"
+                    onclick="openLightbox('figures/gprof.jpg', 'Profiling of the FVM model using GProf in Python. The solver consumes most time in the Biot-Savart induced inflow computation routine, and since the calculations are independent for a vortex at any given time instant, the routing can be parallelized for performance gain.')">
+                <figcaption>Profiling of the FVM model using GProf in Python. The solver consumes most time in the Biot-Savart induced inflow computation routine, and since the calculations are independent for a vortex at any given time instant, the routine can be parallelised for performance gain.</figcaption>
+            </figure>
+
+    </div>
+
+    <p style="margin-top: 2.5em;">
+        The identified bottleneck in the Biot-Savart routine of the FVM solver 
+        has been optimised using CUDA FORTRAN by specifying the number of threads
+        and blocks for computation. A full-scale single rotor hover solution has
+        been demonstrated to achieve at least 2-3x performance gains when simulated
+        on a AMD Ryzen 7 5800H CPU with a 4GB NVidia GeForce RTX 3050 GPU. 
+        
+    </p>
+
+    <p style="margin-top: 2.5em;">
+        Further optimisation of other potential routines is currently underway.
+    </p>
+
+</div>

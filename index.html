@@ -18,7 +18,7 @@
         <div class="header-text">
             <h1>Shrivathsan Narayanan</h1>
             <p class="subtitle">
-                Doctoral Candidate<br>
+                Doctoral Candidate (PhD: expected 2026)<br>
                 Department of Aerospace Engineering<br>
                 Indian Institute of Technology Madras
             </p>
@@ -40,20 +40,35 @@
     </div>
 </div>
 
+<!-- Main navbar -->
 <div class="navbar">
     <button class="tablink" id="defaultOpen" onclick="openTab(event, 'Home')">Home</button>
-    <button class="tablink" onclick="openTab(event, 'Experimental')">Experimental</button>
-    <button class="tablink" onclick="openTab(event, 'Numerical')">Numerical</button>
+    <button class="tablink" onclick="openTab(event, 'Thesis')">Thesis</button>
+    <button class="tablink" onclick="openTab(event, 'Projects')">Projects</button>
     <button class="tablink" onclick="openTab(event, 'Publications')">Publications</button>
     <button class="tablink" onclick="openTab(event, 'Awards')">Awards</button>
 </div>
 
+<!-- Sub navbar for Thesis -->
+<div class="subnav" id="subnav-Thesis">
+    <button class="sublink active" onclick="openSubTab(event, 'Thesis', 'Numerical')">Numerical</button>
+    <button class="sublink" onclick="openSubTab(event, 'Thesis', 'Experimental')">Experimental</button>
+</div>
+
+<!-- Sub navbar for Projects -->
+<div class="subnav" id="subnav-Projects">
+    <button class="sublink active" onclick="openSubTab(event, 'Projects', 'HPC')">HPC</button>
+    <button class="sublink" onclick="openSubTab(event, 'Projects', 'NeuralNetworks')">Neural Networks</button>
+</div>
+
 <div class="content">
-    <div id="Home"          class="tabcontent"></div>
-    <div id="Experimental"  class="tabcontent"></div>
-    <div id="Numerical"     class="tabcontent"></div>
-    <div id="Publications"  class="tabcontent"></div>
-    <div id="Awards"        class="tabcontent"></div>
+    <div id="Home"           class="tabcontent"></div>
+    <div id="Numerical"      class="tabcontent"></div>
+    <div id="Experimental"   class="tabcontent"></div>
+    <div id="HPC"            class="tabcontent"></div>
+    <div id="NeuralNetworks" class="tabcontent"></div>
+    <div id="Publications"   class="tabcontent"></div>
+    <div id="Awards"         class="tabcontent"></div>
 </div>
 
 <footer class="footer">
@@ -68,7 +83,7 @@
             <a href="mailto:nshrivathsan99@gmail.com">Email</a>
         </div>
         <div class="footer-meta">
-            Last updated: May 2025 &nbsp;&middot;&nbsp; &copy; Shrivathsan Narayanan
+            Last updated: May 2026 &nbsp;&middot;&nbsp; &copy; Shrivathsan Narayanan
         </div>
     </div>
 </footer>
@@ -82,22 +97,71 @@
 
 <script>
 
-async function loadTab(name) {
+const activeSubTab = {
+    Thesis:   "Numerical",
+    Projects: "HPC"
+};
+
+const hasSubnav = ["Thesis", "Projects"];
+
+const fileMap = {
+    Home:           "1_home.html",
+    Numerical:      "2a_numerical.html",
+    Experimental:   "2b_experimental.html",
+    HPC:            "3a_hpc.html",
+    NeuralNetworks: "3b_nn.html",
+    Publications:   "4_publications.html",
+    Awards:         "5_awards.html"
+};
+
+async function loadContent(name) {
     const el = document.getElementById(name);
     if (el.dataset.loaded) return;
-    const res = await fetch("tabs/" + name.toLowerCase() + ".html");
+    const res = await fetch("tabs/" + fileMap[name]);
     el.innerHTML = await res.text();
     el.dataset.loaded = "true";
 }
 
-function openTab(evt, tabName) {
+function hideAllContent() {
     document.querySelectorAll(".tabcontent").forEach(el => el.style.display = "none");
+}
+
+function hideAllSubnavs() {
+    document.querySelectorAll(".subnav").forEach(el => el.classList.remove("visible"));
+}
+
+function openTab(evt, tabName) {
+    hideAllContent();
+    hideAllSubnavs();
     document.querySelectorAll(".tablink").forEach(el => el.classList.remove("active"));
-    loadTab(tabName).then(() => {
-        document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+
+    if (hasSubnav.includes(tabName)) {
+        document.getElementById("subnav-" + tabName).classList.add("visible");
+        const sub = activeSubTab[tabName];
+        loadContent(sub).then(() => {
+            hideAllContent();
+            document.getElementById(sub).style.display = "block";
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    } else {
+        loadContent(tabName).then(() => {
+            document.getElementById(tabName).style.display = "block";
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+}
+
+function openSubTab(evt, parentName, subName) {
+    activeSubTab[parentName] = subName;
+    document.querySelectorAll("#subnav-" + parentName + " .sublink")
+        .forEach(el => el.classList.remove("active"));
+    evt.currentTarget.classList.add("active");
+    loadContent(subName).then(() => {
+        hideAllContent();
+        document.getElementById(subName).style.display = "block";
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
-    evt.currentTarget.classList.add("active");
 }
 
 function openLightbox(src, caption) {

@@ -5,13 +5,11 @@
 /* ── Variables ────────────────────────────────────────────── */
 
 :root {
-    --charcoal:    #3d4451;
-    --body-bg:     #fafaf8;
-    --text:        #1a1a1a;
-    --muted:       #555555;
-    --border:      #e0ddd8;
-    --subnav-bg:   #fafaf8;
-    --subnav-text: #6b7280;
+    --charcoal:  #3d4451;
+    --body-bg:   #fafaf8;
+    --text:      #1a1a1a;
+    --muted:     #555555;
+    --border:    #e0ddd8;
 }
 
 /* ── Reset & Base ─────────────────────────────────────────── */
@@ -123,7 +121,7 @@ a:hover {
     opacity: 0.4;
 }
 
-/* ── Main Navbar ──────────────────────────────────────────── */
+/* ── Navbar ───────────────────────────────────────────────── */
 
 .navbar {
     display: flex;
@@ -153,46 +151,6 @@ a:hover {
 }
 
 .navbar button.active {
-    color: var(--charcoal);
-    border-bottom-color: var(--charcoal);
-    font-weight: 600;
-}
-
-/* ── Sub Navbar ───────────────────────────────────────────── */
-
-.subnav {
-    display: none;
-    flex-wrap: wrap;
-    background-color: var(--subnav-bg);
-    border-bottom: 2px solid var(--border);
-    position: sticky;
-    top: 49px;
-    z-index: 9;
-}
-
-.subnav.visible {
-    display: flex;
-}
-
-.subnav button {
-    background: none;
-    border: none;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -1px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-family: 'DM Sans', Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--subnav-text);
-    transition: color 0.15s, border-color 0.15s;
-}
-
-.subnav button:hover {
-    color: var(--charcoal);
-}
-
-.subnav button.active {
     color: var(--charcoal);
     border-bottom-color: var(--charcoal);
     font-weight: 600;
@@ -285,7 +243,7 @@ figcaption {
     padding-top: 4px;
 }
 
-/* ── Figure stack ─────────────────────────────────────────── */
+/* ── Figure stack — all figures stacked vertically ────────── */
 
 .fig-stack {
     display: flex;
@@ -480,20 +438,11 @@ figcaption {
         font-size: 14px;
     }
 
-    .subnav {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        top: 45px;
-    }
-
-    .subnav button {
-        white-space: nowrap;
-    }
-
     .content {
         padding: 32px 20px;
     }
 
+    /* On mobile: thumb stacks above caption */
     figure {
         flex-direction: column;
         align-items: flex-start;

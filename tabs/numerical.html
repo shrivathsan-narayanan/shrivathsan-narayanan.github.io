@@ -1,0 +1,79 @@
+<div class="section-block">
+
+    <h3>Free-Vortex Wake Model</h3>
+
+    <p>
+        A mid-fidelity free-vortex wake method (FVM) framework
+        has been developed to simulate the unsteady aerodynamic behaviour
+        of multi-rotor systems under different flow conditions. The model 
+        represents rotor blades using lifting-line theory formulations and 
+        discretizes the wake into line vortex filaments to capture the 
+        induced flow and rotor wake evolution.
+    </p>
+
+    <p>
+        The developed FVM model has been validated for various flow conditions, 
+        and applied to rotor-gust problems. Subsequently, various aerodynamic 
+        characteristics of the rotor behaviour to gusts have been studied in detail.
+    </p>
+
+    <div class="fig-stack">
+
+        <figure>
+            <img src="figures/fvm_env.jpg" class="thumb" alt="FVM blade environment"
+                 onclick="openLightbox('figures/fvm_env.jpg', 'Typical blade environment and vortex filament discretisation used in the free-vortex wake method model.')">
+            <figcaption>Typical blade environment and vortex filament discretisation used in the free-vortex wake method model.</figcaption>
+        </figure>
+
+    </div>
+
+</div>
+
+<div class="section-block">
+
+    <h3>Sectional Aerodynamic Response for a Coaxial Rotor Configuration</h3>
+
+    <p>
+        The full-scale Harrington coaxial rotor system in hover has been subjected to various
+        combinations of gust amplitudes and frequencies. The spanwise variation
+        of blade angle of attack and inflow have been evaluated. A representative set of 
+        results of the sectional angle of attack distribution is shown in the figure below, 
+        for various gust durations (i.e. frequencies), providing insight into the 
+        rotor–wake interaction and local flow dynamics in multi-rotor configurations.
+    </p>
+
+    <div class="fig-stack">
+
+        <figure>
+            <img src="figures/coax_aoa.jpg" class="thumb" alt="Coaxial rotor angle of attack"
+                 onclick="openLightbox('figures/coax_aoa.jpg', 'Span-wise variation of the sectional angle of attack for the Harrington coaxial rotor system for a 3-second, 5-second, and 10-second sinusoidal axial gust. Overlaid inside is the distribution of angle of attack at representative in-board and out-board sections of the rotor blade.')">
+            <figcaption>Span-wise variation of the sectional angle of attack for the Harrington coaxial rotor system for a 3-second, 5-second, and 10-second sinusoidal axial gust. Overlaid inside is the distribution of angle of attack at representative in-board and out-board sections of the rotor blade.</figcaption>
+        </figure>
+
+    </div>
+
+</div>
+
+<div class="section-block">
+
+    <h3>Quad-Rotor Thrust Response</h3>
+
+    <p>
+        The developed numerical framework enables simulation of wake interactions 
+        in variable-RPM, multi-rotor UAV-scale systems as well. Representative 
+        time domain loading of individual rotors in a UAV-scale quad-rotor configuration 
+        demonstrate the complicated rotor-wake interactions and corresponding peaks
+        in thrust response, indicating the influence of highly-unsteady flow patterns.
+    </p>
+
+    <div class="fig-stack">
+
+        <figure>
+            <img src="figures/quad_wake_thrust.jpg" class="thumb" alt="Quad-rotor wake and thrust"
+                 onclick="openLightbox('figures/quad_wake_thrust.jpg', 'Representative wake structure and the corresponding thrust response for the starboard side of a UAV-scale quad-rotor system under sinusoidal edgewise gust. Different gust durations (i.e. frequencies) are shown, and the thrust response of the 3-second and 15-second gusts are highlighted in detail for clarity.')">
+            <figcaption>Representative wake structure and the corresponding thrust response for the starboard side of a UAV-scale quad-rotor system under sinusoidal edgewise gust. Different gust durations (i.e. frequencies) are shown, and the thrust response of the 3-second and 15-second gusts are highlighted in detail for clarity.</figcaption>
+        </figure>
+
+    </div>
+
+</div>

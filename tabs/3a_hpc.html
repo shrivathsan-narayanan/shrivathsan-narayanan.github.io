@@ -18,8 +18,8 @@
 
             <figure>
                 <img src="figures/gprof.jpg" class="thumb" alt="FVM code profiling"
-                    onclick="openLightbox('figures/gprof.jpg', document.getElementById('thrust_time_exp').innerText)">
-                <figcaption>Profiling of the FVM model using GProf in Python. The solver consumes most time in the Biot-Savart induced inflow computation routine, and since the calculations are independent for a vortex at any given time instant, the routine can be parallelised for performance gain.</figcaption>
+                    onclick="openLightbox('figures/gprof.jpg', document.getElementById('gprof').innerText)">
+                <figcaption id="gprof" style="text-align: justify;"> Profiling of the FVM model using GProf in Python. The solver consumes most time in the Biot-Savart induced inflow computation routine, and since the calculations are independent for a vortex at any given time instant, the routine can be parallelised for performance gain.</figcaption>
             </figure>
 
     </div>

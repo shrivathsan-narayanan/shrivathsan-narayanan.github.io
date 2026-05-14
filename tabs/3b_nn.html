@@ -7,7 +7,7 @@
         in the free-vortex wake method (FVM) model primarily prevents large
         parametric studies in rotorcraft sizing and design stages from
         achieving mid-fidelity accuracy at rapid turnaround times. Low-fidelity
-        blade element theory (BET) models yield quick results but are however
+        blade element theory (BET) model yields quicker results but is however
         incapable of accurately resolving the rotor flow-field for complicated
         geometries and flight conditions. A hybrid neural network and BET model
         trained on FVM datasets, to predict rotor induced inflow can ideally
@@ -17,26 +17,26 @@
     </p>
 
     <p style="margin-top: 2.5em;">
-        The figure below shows a graphcical algorithm of the neural network model
-        integrated with the FVM initialization and core BET load computations. The 
+        The figure below shows a flowchart of the neural network model integrated 
+        with the FVM initialization and core BET load computations. The 
         architecture of the neural network is also provided, which is based on the
         encoder-decoder concept, focusing on leveraging the least possible dimensions
         required to effectively represent the functional relation between the input
-        and the output variable (to be predicted).
+        and the output variable which is to be predicted.
     </p>
 
     <div class="fig-stack">
 
         <figure>
             <img src="figures/bet-nn.jpg" class="thumb" alt="BET-NN flowchart"
-                 onclick="openLightbox('figures/bet-nn.jpg', 'Hybrid neural network (NN) and BET based model developed for rotor inflow prediction and subsequent load computations. The core time marching loop and the Biot-Savart inflow calculations are effectively eliminated from the solver, enabling rapid convergence of the model to a time-averaged steady-state solution under axial flight, and a one-revolution solution for edgewise flight.')">
-            <figcaption>Hybrid neural network (NN) and BET based model developed for rotor inflow prediction and subsequent load computations. The core time marching loop and the Biot-Savart inflow calculations are effectively eliminated from the solver, enabling rapid convergence of the model to a time-averaged steady-state solution under axial flight, and a one-revolution solution for edgewise flight.</figcaption>
+                 onclick="openLightbox('figures/bet-nn.jpg', document.getElementById('bet-nn').innerText)">
+            <figcaption id="bet-nn">Hybrid neural network (NN) and BET based model developed for rotor inflow prediction and subsequent load computations. The core time marching loop and the Biot-Savart inflow calculations are effectively eliminated from the solver, enabling rapid convergence of the model to a time-averaged steady-state solution under axial flight, and a one-revolution solution for edgewise flight.</figcaption>
         </figure>
 
         <figure>
             <img src="figures/nn-arch.jpg" class="thumb" alt="NN model architecture"
-                 onclick="openLightbox('figures/nn-arch.jpg', 'Encoder-decoder based NN architecture utilized for the present study. The span-wise distribution of the bound circulation, which is representative of the rotor geometry is the model input, alongside the flight condition parameters. The model predicts the span-wise variation of the rotor induced inflow.')">
-            <figcaption>Encoder-decoder based NN architecture utilized for the present study. The span-wise distribution of the bound circulation, which is representative of the rotor geometry is the model input, alongside the flight condition parameters. The model predicts the span-wise variation of the rotor induced inflow.</figcaption>
+                 onclick="openLightbox('figures/nn-arch.jpg', document.getElementById('nn-arch').innerText)">
+            <figcaption id="nn-arch">Encoder-decoder based NN architecture utilized for the present study. The span-wise distribution of the bound circulation, which is representative of the rotor geometry is the model input, alongside the flight condition parameters. The model predicts the span-wise variation of the rotor induced inflow. 4 intermediate layers are utilized to arrive at the minimum possible latent representation. The dimension of each layer is obtained through non-linear matrix projections of the quantities from the previous layer. The same process is carried out after training at the minimum latent representation to achieve the original problem size for the output variable. </figcaption>
         </figure>
 
     </div>
@@ -55,21 +55,21 @@
         convergence was observed for the bound circulation in a fixed-point scheme, 
         alongside the corresponding NN-predicted inflow. For each flight condition,
         the prediction of the both the span-wise bound circulation and the inflow
-        demonstrated significant agreement with the FVM truth values for all datasets. 
+        demonstrated significant agreement with the FVM truth values across datasets. 
     </p>
 
     <div class="fig-stack">
 
         <figure>
-            <img src="figures/bcirc_nn.jpg" class="thumb" alt="Bound circulation convergence"
-                 onclick="openLightbox('figures/bcirc_nn.jpg', 'Convergence of span-wise bound circulation distribution with the hybrid BET-NN model for a full-scale single rotor in hover, axial climb, and axial descent. The neural network predicts the inflow distribution corresponding to a given bound circulation distribution, and the Kutta-Joukowski theorem is then solved using BET-predicted lift values, to update the bound circulation distribution in a fixed-point scheme.')">
-            <figcaption>Convergence of span-wise bound circulation distribution with the hybrid BET-NN model for a full-scale single rotor in hover, axial climb, and axial descent. The neural network predicts the inflow distribution corresponding to a given bound circulation distribution, and the Kutta-Joukowski theorem is then solved using BET-predicted lift values, to update the bound circulation distribution in a fixed-point scheme.</figcaption>
+            <img src="figures/bcirc_nn.jpg" class="thumb" alt="Bound circulation predictions"
+                 onclick="openLightbox('figures/bcirc_nn.jpg', document.getElementById('bcirc_nn').innerText)">
+            <figcaption id="bcirc_nn">Converged span-wise bound circulation distribution with the hybrid BET-NN model for the full-scale Harrrington single rotor in hover, axial climb, and axial descent. The neural network first predicts the inflow distribution corresponding to a given bound circulation distribution, and the Kutta-Joukowski theorem is then solved using BET-predicted lift values and the bound circulation distribution is further updated in a fixed-point scheme till convergence.</figcaption>
         </figure>
 
         <figure>
-            <img src="figures/inflow_nn.jpg" class="thumb" alt="Inflow convergence"
-                 onclick="openLightbox('figures/inflow_nn.jpg', 'Converged span-wise inflow distribution corresponding to the final case-specific bound circulation distribution obtained from the fixed-point scheme for the full-scale single rotor in hover, axial climb, and axial descent flight conditions.')">
-            <figcaption>Converged span-wise inflow distribution corresponding to the final case-specific bound circulation distribution obtained from the fixed-point scheme for the full-scale single rotor in hover, axial climb, and axial descent flight conditions.</figcaption>
+            <img src="figures/inflow_nn.jpg" class="thumb" alt="Inflow predictions"
+                 onclick="openLightbox('figures/inflow_nn.jpg', document.getElementById('inflow_nn').innerText)">
+            <figcaption id="inflow_nn">Converged span-wise inflow distribution corresponding to the final bound circulation distribution obtained from the fixed-point scheme for the full-scale Harrington single rotor in hover, axial climb, and axial descent flight conditions.</figcaption>
         </figure>
 
     </div>

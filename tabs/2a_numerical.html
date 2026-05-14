@@ -12,19 +12,19 @@
     </p>
 
     <p>
-        The developed FVM model has been validated for various flow conditions, 
-        and applied to rotor-gust problems. Subsequently, various aerodynamic 
-        characteristics of the rotor behaviour to gusts have been studied in detail.
+        The developed FVM model has been validated for diverse flow conditions, 
+        and applied to rotor-gust problems, enabling detailed analysis of 
+        various aerodynamic characteristics of the rotor behaviour to gusts. Shown 
+        below is a schematic of the typical rotor blade environment in the FVM model
+        with details regarding the blade and wake discretization metrics. 
     </p>
 
     <div class="fig-stack">
-
         <figure>
             <img src="figures/fvm_env.jpg" class="thumb" alt="FVM blade environment"
-                 onclick="openLightbox('figures/fvm_env.jpg', 'Typical blade environment and vortex filament discretisation used in the free-vortex wake method model.')">
-            <figcaption>Typical blade environment and vortex filament discretisation used in the free-vortex wake method model.</figcaption>
+                 onclick="openLightbox('figures/fvm_env.jpg', document.getElementById('fvm_env').innerText)">
+            <figcaption id="fvm_env">Typical blade environment and vortex filament discretisation used in the free-vortex wake method model. Throughout the present study, a <span>10&#176; angle</span> wake discretization is utilized, along with a <span>30&#176; angle</span> rigid near wake for numerical stability. Furthermore, each rotor blade is discretized into 40 span-wise segments, facilitating a good resolution for the radial distribution of aerodynamic quantities.</figcaption>
         </figure>
-
     </div>
 
 </div>
@@ -34,11 +34,11 @@
     <h3>Sectional Aerodynamic Response for a Coaxial Rotor Configuration</h3>
 
     <p>
-        The full-scale Harrington coaxial rotor system in hover has been subjected to various
-        combinations of gust amplitudes and frequencies. The spanwise variation
-        of blade angle of attack and inflow have been evaluated. A representative set of 
-        results of the sectional angle of attack distribution is shown in the figure below, 
-        for various gust durations (i.e. frequencies), providing insight into the 
+        The full-scale Harrington coaxial rotor system in hover was subjected to various
+        combinations of gust amplitudes and frequencies, and the spanwise variation
+        of the blade angle of attack was evaluated. A representative set of results 
+        of the sectional angle of attack distribution is shown in the figure below 
+        for various gust durations (i.e. gust frequencies), providing insight into the 
         rotor–wake interaction and local flow dynamics in multi-rotor configurations.
     </p>
 
@@ -46,8 +46,8 @@
 
         <figure>
             <img src="figures/coax_aoa.jpg" class="thumb" alt="Coaxial rotor angle of attack"
-                 onclick="openLightbox('figures/coax_aoa.jpg', 'Span-wise variation of the sectional angle of attack for the Harrington coaxial rotor system for a 3-second, 5-second, and 10-second sinusoidal axial gust. Overlaid inside is the distribution of angle of attack at representative in-board and out-board sections of the rotor blade.')">
-            <figcaption>Span-wise variation of the sectional angle of attack for the Harrington coaxial rotor system for a 3-second, 5-second, and 10-second sinusoidal axial gust. Overlaid inside is the distribution of angle of attack at representative in-board and out-board sections of the rotor blade.</figcaption>
+                 onclick="openLightbox('figures/coax_aoa.jpg', document.getElementById('coax_aoa').innerText)">
+            <figcaption id="coax_aoa">Span-wise variation of the sectional angle of attack in the Harrington coaxial rotor system for a 3-second, 5-second, and 10-second sinusoidal edgewise gust. The inset plot represents the distribution of angle of attack at representative in-board and out-board sections of the rotor blade. Alternating regions of positive and negative stall can be observed around the peak of the gust for each duration, implying the strong unsteady effects of the oncoming gust field. A sinusoidal envelope can also be observed in the variations, signifying the quasi-steady nature of the angle of attack response to the external gust field.</figcaption>
         </figure>
 
     </div>
@@ -60,9 +60,11 @@
 
     <p>
         The developed numerical framework enables simulation of wake interactions 
-        in variable-RPM, multi-rotor UAV-scale systems as well. Representative 
-        time domain loading of individual rotors in a UAV-scale quad-rotor configuration 
-        demonstrate the complicated rotor-wake interactions and corresponding peaks
+        in variable-RPM, multi-rotor UAV-scale systems, in addition to full-scale
+        variable pitch systems. Representative time domain loading of individual 
+        rotors in a UAV-scale quad-rotor configuration is shown in the image below, 
+        alongside the wake structure corresponding to the peak of the oncoming gust.
+        The results demonstrated the complicated rotor-wake interactions and the peaks
         in thrust response, indicating the influence of highly-unsteady flow patterns.
     </p>
 
@@ -70,8 +72,8 @@
 
         <figure>
             <img src="figures/quad_wake_thrust.jpg" class="thumb" alt="Quad-rotor wake and thrust"
-                 onclick="openLightbox('figures/quad_wake_thrust.jpg', 'Representative wake structure and the corresponding thrust response for the starboard side of a UAV-scale quad-rotor system under sinusoidal edgewise gust. Different gust durations (i.e. frequencies) are shown, and the thrust response of the 3-second and 15-second gusts are highlighted in detail for clarity.')">
-            <figcaption>Representative wake structure and the corresponding thrust response for the starboard side of a UAV-scale quad-rotor system under sinusoidal edgewise gust. Different gust durations (i.e. frequencies) are shown, and the thrust response of the 3-second and 15-second gusts are highlighted in detail for clarity.</figcaption>
+                 onclick="openLightbox('figures/quad_wake_thrust.jpg', document.getElementById('quad-thrust').innerText)">
+            <figcaption id="quad-thrust">Representative thrust response of the port side rotors in a UAV-scale quad-rotor system under sinusoidal edgewise gust. Different gust durations (i.e. frequencies) are represented with different colors. The thrust response of the 3-second and 15-second gusts are highlighted for clarity. The wake structure corresponding to the peak of the gust shows clear rotor-wake interactions downstream of the system, which feeds back into its thrust reponse as can be observed from the unsteady peaks in the plots.</figcaption>
         </figure>
 
     </div>

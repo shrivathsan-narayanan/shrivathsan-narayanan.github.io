@@ -1,0 +1,47 @@
+<div class="section-block">
+
+    <h3>Optimal wind sensor sensor location on multi-rotor UAVs for meteorological applications</h3>
+
+    <p>
+        Meteorological observations using unmanned aerial vehicles are becoming
+        increasingly common for robust, localized measurements of atmospheric quantities. 
+        However, optimizing critical parameters such as instrumentation positioning, 
+        real-time data transfer, and vehicle flight stability remains a major challenge 
+        for effective deployment and realization. The present work investigates the 
+        aerodynamic interference in typical UAV-scale multi-rotor systems across 
+        flight conditions, and proposes optimal wind sensor placement locations based on 
+        quiet zones identified in the flow field, where rotor-wake influences are low. 
+    </p>
+
+    <p>
+        A free-vortex wake method (FVM) model was utilized to perform parametric simulation 
+        of UAV-scale single, coaxial, quad- and hexa-rotor configurations across flight 
+        conditions. A supporting experimental test rig was utilized to validate the 
+        induced velocity calculations in the FVM model. Shown below are representative results 
+        for a 12-inch diameter rotor in single and hexa-rotor configurations.
+    </p>
+
+
+    <div class="fig-stack">
+
+        <figure>
+            <img src="figures/smr-quiet-zones.jpg" class="thumb" alt="Single rotor flow field and wake characteristics"
+                 onclick="openLightbox('figures/smr-quiet-zones.jpg', document.getElementById('smr-quiet-zones').innerText)">
+            <figcaption id="smr-quiet-zones" style="text-align: justify;">Flow field and wake characteristics of a UAV-scale single rotor at a disk loading of 300 N/m<sup>2</sup>. (a) Hover, (b) Axial descent, and (c) Forward descent flight conditions. Shown on the left are the induced velocity field normalized with the rotor tip speed, and on the right are the corresponding quiet zones identified based on a 1% tip speed threshold for the induced velocity values for two different operating conditions (disk loading). </figcaption>
+        </figure>
+
+        <figure>
+            <img src="figures/hexa-config-wake.jpg" class="thumb" alt="Hexa-rotor configuration and wake profile"
+                 onclick="openLightbox('figures/hexa-config-wake.jpg', document.getElementById('hexa-config-wake').innerText)">
+            <figcaption id="hexa-config-wake" style="text-align: justify;">(a) Configuration of the UAV-scale hexa-rotor<sup>2</sup>. (b) Time-averaged wake trajectories and the various measurement planes considered for the identification of quiet zones. </figcaption>
+        </figure>
+
+        <figure>
+            <img src="figures/hexa-quiet-zones.jpg" class="thumb" alt="Hexa-rotor flow field and wake characteristics"
+                 onclick="openLightbox('figures/hexa-quiet-zones.jpg', document.getElementById('hexa-quiet-zones').innerText)">
+            <figcaption id="hexa-quiet-zones" style="text-align: justify;">Flow field and wake characteristics of a UAV-scale hexa-rotor at a disk loading of 300 N/m<sup>2</sup>. (a) Plane passing through the geometric center (plane I), (b) Plane passign through the hubs of rotors 3 and 5 (plane II), and (c) Plane passing through the hubs of rotors 4 and 5 (plane III) Shown on the left are the induced velocity field normalized with the rotor tip speed, and on the right are the corresponding quiet zones identified based on a 1% tip speed threshold for the induced velocity values for two different operating conditions (disk loading). </figcaption>
+        </figure>
+
+    </div>
+
+</div>
